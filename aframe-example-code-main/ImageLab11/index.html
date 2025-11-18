@@ -1,15 +1,258 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"> </script>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+      <a-assets>
+        <a-asset-item
+          id="candyShop"
+          src="../ImageProject-03/assets/candy_shop.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="mario"
+          src="../ImageProject-03/assets/mario.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="cupcake"
+          src="../ImageProject-03/assets/cupcake.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="hardCandy"
+          src="../ImageProject-03/assets/hard_candy.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="iceCream"
+          src="../ImageProject-03/assets/ice_cream.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="lollipopH"
+          src="../ImageProject-03/assets/lollipop_horizontal.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="lollipopV"
+          src="../ImageProject-03/assets/lollipop_vertical.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="wrapperCandy"
+          src="../ImageProject-03/assets/wrapper_candy.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="terrain"
+          src="../ImageProject-03/assets/terrain2.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="grass"
+          src="../ImageProject-03/assets/grass.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="path"
+          src="../ImageProject-03/assets/path.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="tree"
+          src="../ImageProject-03/assets/tree.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <!-- scene terrain -->
+      <a-entity
+        gltf-model="#terrain"
+        position="0 3 -41"
+        scale="70 70 70"
+        rotation="0 180 -6"
+      ></a-entity>
+      <!-- grass -->
+      <a-entity
+        gltf-model="#grass"
+        position="30 -3 -41"
+        scale=".1 .1 .1"
+        rotation="0 40 0"
+      ></a-entity>
+      <a-entity
+        gltf-model="#grass"
+        position="30 -3 -51"
+        scale=".1 .1 .1"
+        rotation="0 20 0"
+      ></a-entity>
+      <a-entity
+        gltf-model="#grass"
+        position="20 -3 -51"
+        scale=".1 .1 .1"
+        rotation="0 40 0"
+      ></a-entity>
+      <a-entity
+        gltf-model="#grass"
+        position="-30 -2 -41"
+        scale=".1 .1 .1"
+        rotation="0 40 0"
+      ></a-entity>
+      <a-entity
+        gltf-model="#grass"
+        position="-30 -2 -51"
+        scale=".1 .1 .1"
+        rotation="0 20 0"
+      ></a-entity>
+      <a-entity
+        gltf-model="#grass"
+        position="-20 -3 -51"
+        scale=".1 .1 .1"
+        rotation="0 40 0"
+      ></a-entity>
+      <!-- path -->
+      <a-entity gltf-model="#path" position="-3.5 0 -48"></a-entity>
+      <a-entity gltf-model="#path" position="-3.5 0 -46"></a-entity>
+      <a-entity gltf-model="#path" position="-2.6 0 -44"></a-entity>
+      <a-entity gltf-model="#path" position="-2 0 -42"></a-entity>
+      <a-entity gltf-model="#path" position="-1.4 0 -40"></a-entity>
+      <a-entity gltf-model="#path" position="0 0 -38"></a-entity>
+      <a-entity gltf-model="#path" position="0 0 -36"></a-entity>
+      <a-entity gltf-model="#path" position="0 0 -34"></a-entity>
+      <a-entity gltf-model="#path" position="0 0 -32"></a-entity>
+      <a-entity gltf-model="#path" position="0 0 -30"></a-entity>
+      <a-entity gltf-model="#path" position="0 0 -28"></a-entity>
+      <a-entity gltf-model="#path" position="0 -.2 -26"></a-entity>
+      <a-entity gltf-model="#path" position="0 -.4 -24"></a-entity>
+      <a-entity gltf-model="#path" position="0 -.6 -22"></a-entity>
+      <a-entity gltf-model="#path" position="0 -.8 -20"></a-entity>
+      <a-entity gltf-model="#path" position="0 -1 -18"></a-entity>
+      <a-entity gltf-model="#path" position="0 -1 -16"></a-entity>
+      <a-entity gltf-model="#path" position="0 -1 -14"></a-entity>
+      <a-entity gltf-model="#path" position="0 -1 -12"></a-entity>
+      <a-entity gltf-model="#path" position="0 -1 -10"></a-entity>
+      <a-entity gltf-model="#path" position="0 -1 -8"></a-entity>
+      <a-entity gltf-model="#path" position="0 -1 -6"></a-entity>
+      <a-entity gltf-model="#path" position="0 -1 -4"></a-entity>
+      <a-entity gltf-model="#path" position="0 -1 -2"></a-entity>
+      <a-entity gltf-model="#path" position="0 -1 0"></a-entity>
+
+      <!-- vertical lollipops -->
+      <a-entity
+        gltf-model="#lollipopV"
+        position="-20 0 -44"
+        scale="3 3 3"
+        rotation="0 110 0"
+      ></a-entity>
+      <a-entity
+        gltf-model="#lollipopV"
+        position="-20 -1 -20"
+        scale="3 3 3"
+        rotation="0 110 0"
+      ></a-entity>
+      <a-entity
+        gltf-model="#lollipopV"
+        position="20 -2 -26"
+        scale="3 3 3"
+        rotation="0 -150 0"
+      ></a-entity>
+
+      <!-- ice cream -->
+      <a-entity
+        gltf-model="#iceCream"
+        position="15 0 -44"
+        scale="16 16 16"
+      ></a-entity>
+      <a-entity
+        gltf-model="#iceCream"
+        position="-18 0 -30"
+        scale="15 15 15"
+      ></a-entity>
+      <a-entity
+        gltf-model="#iceCream"
+        position="6 -1 -10"
+        scale="4 4 4"
+      ></a-entity>
+      <a-entity
+        gltf-model="#iceCream"
+        position="-10 -1 -14"
+        scale="4 4 4"
+      ></a-entity>
+
+      <!-- cupcake -->
+      <a-entity
+        gltf-model="#cupcake"
+        position="18 0 -17"
+        scale="13 13 13"
+      ></a-entity>
+      <a-entity
+        gltf-model="#cupcake"
+        position="10 -.5 -24"
+        scale="5 5 5"
+      ></a-entity>
+      <a-entity
+        gltf-model="#cupcake"
+        position="-16 0 -10"
+        scale="9 9 9"
+      ></a-entity>
+
+      <!-- hard candy -->
+      <a-entity
+        gltf-model="#hardCandy"
+        position="-15 -1 -23"
+        scale=".3 .3 .3"
+        rotation="0 -20 0"
+      ></a-entity>
+      <a-entity
+        gltf-model="#hardCandy"
+        position="8 -1 -5"
+        scale=".2 .2 .2"
+        rotation="0 -140 0"
+      ></a-entity>
+
+      <!-- horizontal lollipops -->
+      <a-entity
+        gltf-model="#lollipopH"
+        position="10 -1 -15"
+        scale=".05 .05 .05"
+        rotation="-10 -120 0"
+      ></a-entity>
+      <a-entity
+        gltf-model="#lollipopH"
+        position="-10 -1 -7"
+        scale=".05 .05 .05"
+        rotation="-10 120 0"
+      ></a-entity>
+
+      <!-- wrapper candy -->
+      <a-entity
+        gltf-model="#wrapperCandy"
+        position="-13 .5 -35"
+        scale=".8 .8 .8"
+      ></a-entity>
+      <a-entity
+        gltf-model="#wrapperCandy"
+        position="8 0 -28"
+        scale=".8 .8 .8"
+        rotation="0 90 0"
+      ></a-entity>
+
+      <!-- candy shop -->
+      <a-entity
+        gltf-model="#candyShop"
+        position="0 -1 -54"
+        rotation="0 270 0"
+        scale="3 3 3"
+      ></a-entity>
+      <a-entity
+        gltf-model="#mario"
+        position="5 1.75 -58"
+        scale="7 7 7"
+        rotation="0 -45 0"
+      ></a-entity>
+
+      <!-- trees -->
+      <a-entity
+        gltf-model="#tree"
+        position="6 -1 -45"
+        scale=".75 .75 .75"
+      ></a-entity>
+      <a-entity
+        gltf-model="#tree"
+        position="-6 -1 -38"
+        scale=".75 .75 .75"
+        rotation="0 180 0"
+      ></a-entity>
     </a-scene>
   </body>
 </html>
